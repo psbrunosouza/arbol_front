@@ -1,10 +1,9 @@
-import React from "react";
+import React, { InputHTMLAttributes } from "react";
 import { Input } from "./style";
 
-interface IInput {
+interface IInput extends InputHTMLAttributes<HTMLInputElement> {
   width: string;
   height: string;
-  placeholder?: string;
   placeholderColor?: string;
   color?: string;
   borderSize?: number;
@@ -14,7 +13,6 @@ interface IInput {
 }
 
 export const InputAtom: React.FC<IInput> = ({
-  placeholder,
   width,
   height,
   placeholderColor,
@@ -24,6 +22,7 @@ export const InputAtom: React.FC<IInput> = ({
   borderType,
   spacing,
   children,
+  ...props
 }) => {
   return (
     <Input
@@ -37,7 +36,7 @@ export const InputAtom: React.FC<IInput> = ({
       spacing={spacing}
     >
       {children}
-      <input placeholder={placeholder}></input>
+      <input {...props}></input>
     </Input>
   );
 };

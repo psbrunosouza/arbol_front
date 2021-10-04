@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 interface ILink {
   color?: string;
-  href: string;
   spacing?: number;
 }
 

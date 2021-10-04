@@ -1,7 +1,7 @@
-import React from "react";
+import React, { ButtonHTMLAttributes } from "react";
 import { ButtonContainer } from "./style/style";
 
-interface IButton {
+interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {
   width: string;
   height: string;
   backgroundColor?: string;
@@ -10,6 +10,7 @@ interface IButton {
   borderColor?: string;
   borderType?: string;
   spacing?: number;
+  isLoading?: boolean;
 }
 
 export const ButtonAtom: React.FC<IButton> = ({
@@ -21,7 +22,9 @@ export const ButtonAtom: React.FC<IButton> = ({
   borderColor,
   borderType,
   spacing,
+  isLoading,
   children,
+  ...rest
 }) => {
   return (
     <ButtonContainer
@@ -34,7 +37,7 @@ export const ButtonAtom: React.FC<IButton> = ({
       borderColor={borderColor}
       spacing={spacing}
     >
-      <button>
+      <button {...rest}>
         <span>{children}</span>
       </button>
     </ButtonContainer>

@@ -1,7 +1,7 @@
-import React from "react";
+import React, { AnchorHTMLAttributes } from "react";
 import { Link } from "./style";
 
-interface ILink {
+interface ILink extends AnchorHTMLAttributes<HTMLAnchorElement> {
   href: string;
   color?: string;
   spacing?: number;
@@ -9,15 +9,15 @@ interface ILink {
 }
 
 export const LinkAtom: React.FC<ILink> = ({
-  href,
   color,
   spacing,
   textAlign,
   children,
+  ...rest
 }) => {
   return (
     <div style={{ display: "flex", justifyContent: textAlign }}>
-      <Link color={color} spacing={spacing} href={href}>
+      <Link {...rest} color={color} spacing={spacing}>
         {children}
       </Link>
     </div>
