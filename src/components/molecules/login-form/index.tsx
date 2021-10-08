@@ -5,7 +5,6 @@ import { LinkAtom } from "../../atoms/link";
 import { AiFillLock, AiOutlineMail } from "react-icons/ai";
 import { Formik } from "formik";
 import api from "../../../@shared/services/api/api";
-import { Link } from "react-router-dom";
 
 export const LoginFormMolecule: React.FC = () => {
   return (
@@ -72,13 +71,12 @@ export const LoginFormMolecule: React.FC = () => {
             </ButtonAtom>
             <LinkAtom
               color="#9373ed"
-              to="/register"
+              to={{ pathname: "/register" }}
               spacing={6}
               textAlign="center"
             >
               Create new account
             </LinkAtom>
-            <Link to="/register">a</Link>
             <LinkAtom color="#9373ed" to="" spacing={6} textAlign="center">
               OMG, Forget access?
             </LinkAtom>

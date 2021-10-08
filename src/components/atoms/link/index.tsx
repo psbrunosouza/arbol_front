@@ -1,6 +1,6 @@
 import React from "react";
-import { LinkProps } from "react-router-dom";
-import { Link } from "./style";
+import { LinkProps, Link } from "react-router-dom";
+import { LinkContainer } from "./style";
 
 interface ILink extends LinkProps {
   color?: string;
@@ -13,14 +13,18 @@ export const LinkAtom: React.FC<ILink> = ({
   spacing,
   textAlign,
   children,
+  to,
   ...rest
 }) => {
   return (
-    // <div style={{ display: "flex", justifyContent: textAlign }}>
-
-    // </div>
-    <Link {...rest} color={color} spacing={spacing}>
-      {children}
-    </Link>
+    <LinkContainer
+      color={color}
+      spacing={spacing}
+      style={{ display: "flex", justifyContent: textAlign }}
+    >
+      <Link to={to} {...rest}>
+        {children}
+      </Link>
+    </LinkContainer>
   );
 };

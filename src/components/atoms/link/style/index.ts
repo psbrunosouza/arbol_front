@@ -1,17 +1,19 @@
-import { LinkProps } from "react-router-dom";
 import styled from "styled-components";
 
-interface ILink extends LinkProps {
+interface ILink {
   color?: string;
   spacing?: number;
 }
 
-export const Link = styled.a<ILink>`
-  color: ${(props) => props.color};
-  font-weight: bold;
-  text-decoration: none;
+export const LinkContainer = styled.a<ILink>`
   margin: ${(props) => props.spacing + "px"} 0;
   cursor: pointer;
+
+  a {
+    text-decoration: none;
+    color: ${(props) => props.color};
+    font-weight: bold;
+  }
 
   transition: color 0.2s;
 
