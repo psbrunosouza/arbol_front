@@ -18,7 +18,7 @@ export const Input = styled.div<IInput>`
     outline: none;
     margin-left: 6px;
     color: ${(props) => props.color};
-    font-size:  ${(props) => props.fontSize};
+    font-size: ${(props) => props.fontSize};
     width: 100%;
   }
 
@@ -36,6 +36,7 @@ export const Input = styled.div<IInput>`
   display: flex;
   align-items: center;
   padding: 4px;
-  margin: ${props => props.spacing + 'px'} 0;
-  border: ${(props) => props.borderSize + "px"} ${(props) => props.borderType} ${(props) => props.borderColor};
+  margin: ${(props) => props.spacing + "px"} 0;
+  border: ${(props) => props.borderSize + "px"} ${(props) => props.borderType}
+    ${(props) => props.borderColor};
 `;

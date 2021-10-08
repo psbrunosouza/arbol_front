@@ -1,8 +1,8 @@
 import React from "react";
-import { LoginFormMolecule } from "../../molecules/login-form";
 import { Column, Container, Row } from "../../../globalstyles";
+import { RegisterFormMolecule } from "../../molecules/register-form";
 
-export const Login: React.FC = () => {
+export const Register: React.FC = () => {
   return (
     <Container>
       <Column width="calc(100% - 440px)" color="#9373ED"></Column>
@@ -14,7 +14,7 @@ export const Login: React.FC = () => {
         align="center"
       >
         <Row width="260px" justify="center" align="center">
-          <LoginFormMolecule></LoginFormMolecule>
+          <RegisterFormMolecule></RegisterFormMolecule>
         </Row>
         <Row
           width="260px"

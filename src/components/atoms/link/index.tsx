@@ -1,8 +1,8 @@
-import React, { AnchorHTMLAttributes } from "react";
+import React from "react";
+import { LinkProps } from "react-router-dom";
 import { Link } from "./style";
 
-interface ILink extends AnchorHTMLAttributes<HTMLAnchorElement> {
-  href: string;
+interface ILink extends LinkProps {
   color?: string;
   spacing?: number;
   textAlign?: string;
@@ -16,10 +16,11 @@ export const LinkAtom: React.FC<ILink> = ({
   ...rest
 }) => {
   return (
-    <div style={{ display: "flex", justifyContent: textAlign }}>
-      <Link {...rest} color={color} spacing={spacing}>
-        {children}
-      </Link>
-    </div>
+    // <div style={{ display: "flex", justifyContent: textAlign }}>
+
+    // </div>
+    <Link {...rest} color={color} spacing={spacing}>
+      {children}
+    </Link>
   );
 };

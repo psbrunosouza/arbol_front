@@ -2,18 +2,17 @@ import React from "react";
 import { InputAtom } from "../../atoms/input";
 import { ButtonAtom } from "../../atoms/button";
 import { LinkAtom } from "../../atoms/link";
-import { AiFillLock, AiOutlineMail } from "react-icons/ai";
+import { AiOutlineUser, AiFillLock, AiOutlineMail } from "react-icons/ai";
 import { Formik } from "formik";
 import api from "../../../@shared/services/api/api";
-import { Link } from "react-router-dom";
 
-export const LoginFormMolecule: React.FC = () => {
+export const RegisterFormMolecule: React.FC = () => {
   return (
     <div>
       <Formik
-        initialValues={{ email: "", password: "" }}
+        initialValues={{ name: "", email: "", password: "" }}
         onSubmit={(values, { setSubmitting }) => {
-          api.post("/auth", values).then((response) => {
+          api.post("/users/create", values).then((response) => {
             console.log(response);
             setSubmitting(false);
           });
@@ -21,6 +20,24 @@ export const LoginFormMolecule: React.FC = () => {
       >
         {({ isSubmitting, handleSubmit, handleChange, handleBlur, values }) => (
           <form onSubmit={handleSubmit}>
+            <InputAtom
+              name="name"
+              width="100%"
+              height="24px"
+              color="#9373ed"
+              placeholderColor="#9373ed"
+              placeholder="name"
+              borderColor="#9373ed"
+              borderSize={3}
+              borderType="solid"
+              spacing={14}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values.email}
+            >
+              <AiOutlineUser color="#9373ed" />
+            </InputAtom>
+
             <InputAtom
               name="email"
               width="100%"
@@ -68,17 +85,16 @@ export const LoginFormMolecule: React.FC = () => {
               disabled={isSubmitting}
               isLoading={isSubmitting}
             >
-              LOGIN
+              REGISTER
             </ButtonAtom>
             <LinkAtom
               color="#9373ed"
-              to="/register"
+              to="/login"
               spacing={6}
               textAlign="center"
             >
-              Create new account
+              I already have an account.
             </LinkAtom>
-            <Link to="/register">a</Link>
             <LinkAtom color="#9373ed" to="" spacing={6} textAlign="center">
               OMG, Forget access?
             </LinkAtom>

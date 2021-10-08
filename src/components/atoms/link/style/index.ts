@@ -1,19 +1,21 @@
+import { LinkProps } from "react-router-dom";
 import styled from "styled-components";
 
-interface ILink {
+interface ILink extends LinkProps {
   color?: string;
   spacing?: number;
 }
 
 export const Link = styled.a<ILink>`
-  color: ${props => props.color};
+  color: ${(props) => props.color};
   font-weight: bold;
   text-decoration: none;
-  margin: ${props => props.spacing + 'px'} 0;
+  margin: ${(props) => props.spacing + "px"} 0;
+  cursor: pointer;
 
   transition: color 0.2s;
 
-  &:hover{
+  &:hover {
     filter: brightness(1.2);
   }
 
