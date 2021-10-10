@@ -96,7 +96,7 @@ export const RegisterFormMolecule: React.FC = () => {
               I already have an account.
             </LinkAtom>
             <LinkAtom color="#9373ed" to="" spacing={6} textAlign="center">
-              OMG, Forget access?
+              OMG, Forgot access?
             </LinkAtom>
           </form>
         )}

@@ -5,7 +5,14 @@ import { Column, Container, Row } from "../../../globalstyles";
 export const Login: React.FC = () => {
   return (
     <Container>
-      <Column width="calc(100% - 440px)" color="#9373ED"></Column>
+      <Column
+        width="calc(100% - 440px)"
+        color="#9373ED"
+        style={{
+          background: "url(https://source.unsplash.com/1280x720/?technology)",
+          objectFit: "cover",
+        }}
+      ></Column>
       <Column
         style={{ position: "relative" }}
         width="560px"
