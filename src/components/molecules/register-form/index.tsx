@@ -12,10 +12,15 @@ export const RegisterFormMolecule: React.FC = () => {
       <Formik
         initialValues={{ name: "", email: "", password: "" }}
         onSubmit={(values, { setSubmitting }) => {
-          api.post("/users/create", values).then((response) => {
-            console.log(response);
-            setSubmitting(false);
-          });
+          api
+            .post("/users/create", values)
+            .then((response) => {
+              console.log(response);
+              setSubmitting(false);
+            })
+            .catch((err) => {
+              console.log(err);
+            });
         }}
       >
         {({ isSubmitting, handleSubmit, handleChange, handleBlur, values }) => (
@@ -33,13 +38,14 @@ export const RegisterFormMolecule: React.FC = () => {
               spacing={14}
               onChange={handleChange}
               onBlur={handleBlur}
-              value={values.email}
+              value={values.name}
             >
               <AiOutlineUser color="#9373ed" />
             </InputAtom>
 
             <InputAtom
               name="email"
+              type="email"
               width="100%"
               height="24px"
               color="#9373ed"

@@ -4,6 +4,7 @@ import { ButtonContainer } from "./style/style";
 interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {
   width: string;
   height: string;
+  style?: Object;
   backgroundColor?: string;
   color?: string;
   borderSize?: number;
@@ -24,6 +25,7 @@ export const ButtonAtom: React.FC<IButton> = ({
   spacing,
   isLoading,
   children,
+  style,
   ...rest
 }) => {
   return (
@@ -36,6 +38,7 @@ export const ButtonAtom: React.FC<IButton> = ({
       borderType={borderType}
       borderColor={borderColor}
       spacing={spacing}
+      style={style}
     >
       <button {...rest}>
         <span>{children}</span>

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { animated } from "react-spring";
 
 interface IColumn {
   /** apply width to the column */
@@ -40,6 +41,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: row;
   overflow-y: hidden;
+  overflow-x: hidden;
 `;
 
 export const Column = styled.div<IColumn>`
@@ -51,6 +53,9 @@ export const Column = styled.div<IColumn>`
   justify-content: ${(props) => props.justify};
   align-items: ${(props) => props.align};
 `;
+
+export const AnimatedColumn = styled(animated(Column))``;
+export const AnimatedContainer = styled(animated(Container))``;
 
 export const Row = styled.div<IRow>`
   display: flex;

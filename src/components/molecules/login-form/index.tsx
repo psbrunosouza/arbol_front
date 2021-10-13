@@ -12,10 +12,15 @@ export const LoginFormMolecule: React.FC = () => {
       <Formik
         initialValues={{ email: "", password: "" }}
         onSubmit={(values, { setSubmitting }) => {
-          api.post("/auth", values).then((response) => {
-            console.log(response);
-            setSubmitting(false);
-          });
+          api
+            .post("/auth", values)
+            .then((response) => {
+              console.log(response);
+              setSubmitting(false);
+            })
+            .catch((err) => {
+              console.log(err.message);
+            });
         }}
       >
         {({ isSubmitting, handleSubmit, handleChange, handleBlur, values }) => (
@@ -39,6 +44,7 @@ export const LoginFormMolecule: React.FC = () => {
             </InputAtom>
             <InputAtom
               name="password"
+              type="password"
               width="100%"
               height="24px"
               color="#9373ed"

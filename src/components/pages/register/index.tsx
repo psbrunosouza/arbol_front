@@ -1,11 +1,20 @@
 import React from "react";
-import { Column, Container, Row } from "../../../globalstyles";
+import { Column, Row, AnimatedContainer } from "../../../globalstyles";
 import { RegisterFormMolecule } from "../../molecules/register-form";
+import { useSpring } from "react-spring";
 
 export const Register: React.FC = () => {
+  const props = useSpring({
+    from: {
+      transform: "translate3d(200%,0,0)",
+    },
+    to: {
+      transform: "translate3d(0,0,0)",
+    },
+  });
+
   return (
-    <Container>
-      <Column width="calc(100% - 440px)" color="#9373ED"></Column>
+    <AnimatedContainer style={props}>
       <Column
         style={{ position: "relative" }}
         width="560px"
@@ -26,6 +35,7 @@ export const Register: React.FC = () => {
           <p>ArbolApp © 2021</p>
         </Row>
       </Column>
-    </Container>
+      <Column width="calc(100% - 440px)" color="#9373ED"></Column>
+    </AnimatedContainer>
   );
 };
