@@ -1,6 +1,6 @@
 import React from "react";
 import { ButtonAtom } from "../../atoms/button";
-import { ItemMenuAtom } from "../../atoms/item-menu";
+import { ItemMenuAtom } from "../../atoms/folder";
 import { MenuContainer } from "./styles";
 import { BsFolder } from "react-icons/bs";
 

@@ -1,6 +1,6 @@
 import React from "react";
-import { Column, Row, AnimatedContainer } from "../../../globalstyles";
-import { RegisterFormMolecule } from "../../molecules/register-form";
+import { Column, Row, AnimatedContainer } from "../../theme";
+import { RegisterFormMolecule } from "../../components/molecules/register-form";
 import { useSpring } from "react-spring";
 
 export const Register: React.FC = () => {

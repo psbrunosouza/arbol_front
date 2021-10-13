@@ -4,7 +4,7 @@ import { ButtonAtom } from "../../atoms/button";
 import { LinkAtom } from "../../atoms/link";
 import { AiOutlineUser, AiFillLock, AiOutlineMail } from "react-icons/ai";
 import { Formik } from "formik";
-import api from "../../../@shared/services/api/api";
+import api from "../../../shared/services/api/api";
 
 export const RegisterFormMolecule: React.FC = () => {
   return (

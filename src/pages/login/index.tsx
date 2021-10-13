@@ -1,12 +1,12 @@
 import React from "react";
-import { LoginFormMolecule } from "../../molecules/login-form";
+import { LoginFormMolecule } from "../../components/molecules/login-form";
 import {
   Column,
   AnimatedColumn,
   Container,
   Row,
   AnimatedContainer,
-} from "../../../globalstyles";
+} from "../../theme";
 import { useSpring } from "react-spring";
 
 export const Login: React.FC = () => {

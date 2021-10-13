@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import { DashboardRoute } from "../../../components/pages/dashboard/routes";
-import { LoginRoute } from "../../../components/pages/login/routes";
-import { RegisterRoute } from "../../../components/pages/register/routes";
+import { DashboardRoute } from "../../../pages/dashboard/routes";
+import { LoginRoute } from "../../../pages/login/routes";
+import { RegisterRoute } from "../../../pages/register/routes";
 
 export const Routes: React.FC = () => {
   return (

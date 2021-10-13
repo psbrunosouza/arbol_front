@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes } from "./@shared/http/routes";
+import { Routes } from "./shared/http/routes";
 import "./App.css";
 
 function App() {

@@ -1,8 +1,8 @@
 import React from "react";
-import { Container } from "../../../globalstyles";
-import { HeaderMolecute } from "../../molecules/header";
-import { MenuMolecule } from "../../molecules/menu";
-import { SidebarMolecule } from "../../molecules/sidebar";
+import { Container } from "../../theme";
+import { HeaderMolecute } from "../../components/molecules/header";
+import { MenuMolecule } from "../../components/molecules/folders";
+import { SidebarMolecule } from "../../components/molecules/sidebar";
 
 export const Dashboard: React.FC = () => {
   return (

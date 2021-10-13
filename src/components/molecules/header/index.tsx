@@ -1,5 +1,5 @@
 import React from "react";
-import { SquareButtonAtom } from "../../atoms/square-button";
+import { SquareButtonAtom } from "../../atoms/button-item";
 import { TitleAtom } from "../../atoms/title";
 import { HeaderContainer } from "./styles";
 import { AiOutlineArrowLeft, AiOutlinePlus } from "react-icons/ai";
